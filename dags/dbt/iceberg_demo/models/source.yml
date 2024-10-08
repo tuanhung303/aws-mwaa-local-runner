@@ -1,0 +1,26 @@
+version: 2
+
+sources:
+  - name: mysql
+    database: Finance
+    schema: demo_db
+    tables:
+      - name: exchange_rate
+        description: exchange_rate data
+        columns:
+          - name: num_code
+            description: currency num code
+          - name: char_code
+            description: currency char code
+          - name: unit
+            description: currency unit
+          - name: currency
+            description: currency name
+          - name: rate
+            description: exchange rate
+          - name: business_date
+            description: business date when perform the ETL
+          - name: primary_key
+            description: primary key, combined by char_code and business_date
+          - name: surrogate_key
+            description: combined by char_code, rate and business_date
